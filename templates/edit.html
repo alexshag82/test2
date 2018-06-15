@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Модели в Django</title>
+</head>
+<body class="container">
+    <form method="POST">
+        {% csrf_token %}
+        <p><label>Введите ipadr</label><br><input type="text" name="ipadr"  value="{{person.ipadr }}" /></p>
+        <p><label>Введите val_tip</label><br><input type="text" name="val_tip"  value="{{person.val_tip }}" /></p>
+        <p><label>Введите va2_desc</label><br><input type="text" name="va2_desc"  value="{{person.va2_desc }}" /></p>
+        <p><label>Введите va3_prim</label><br><input type="text" name="va3_prim"  value="{{person.va3_prim }}" /></p>
+        <p><label>Введите va4_vlan_byfly</label><br><input type="text" name="va4_vlan_byfly"  value="{{person.va4_vlan_byfly }}" /></p>
+        <p><label>Введите va5_pool_iptv</label><br><input type="text" name="va5_pool_iptv"  value="{{person.va5_pool_iptv }}" /></p>
+        <p><label>Введите va6_pool_tr069</label><br><input type="text" name="va6_pool_tr069"  value="{{person.va6_pool_tr069 }}" /></p>
+        <p><label>Введите va7_ims_relay</label><br><input type="text" name="va7_ims_relay"  value="{{person.va7_ims_relay }}" /></p>
+        <p><label>Введите va8_hwf</label><br><input type="text" name="va8_hwf"  value="{{person.va8_hwf }}" /></p>
+        <p><label>Введите va9_ohr</label><br><input type="text" name="va9_ohr" value="{{person.va9_ohr}}" /></p>
+        <p><label>Введите va10_imssignal</label><br><input type="text" name="va10_imssignal" value="{{person.va10_imssignal}}" /></p>
+        <p><label>Введите val1_imsmedia</label><br><input type="text" name="val1_imsmedia" value="{{person.val1_imsmedia}}" /></p>
+        <p><label>Введите val2_nomers</label><br><input type="text" name="val2_nomers" value="{{person.val2_nomers}}" /></p>
+        <input type="submit" value="Сохранить" >
+    </form>
+</body>
+</html>
