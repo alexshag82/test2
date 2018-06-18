@@ -16,8 +16,8 @@
 				<!-- <tr> -->
 				<div class="table_dark">
 					{% for rues in name_rues %}
-						<!-- <td><a class="btn btn-default" href="list/{{name.id}}">{{ rues.name}}</a></td> -->
-						<td><a class="btn btn-default" href="list/{{rues.id}}">{{ rues.name}}</span></a></td>
+						<!-- <td><a class="btn btn-default" href="listq/{{name.id}}">{{ rues.name}}</a> </td> -->
+						<td><a class="btn btn-default" href="..\{{rues.id}}">{{ rues.name}}</span></a></td>
 					{% endfor %}
 				</div>
 				<!-- </tr> -->
@@ -46,7 +46,7 @@
 			</div>
 			'{{id}}'<br>
 			{% for person in ipadress %}
-			{#	{% if person.i_ru != id|urlencode %} #}
+				{% if person.i_ru == id|urlencode %}
 					<tr>
 						<div class="post">
 							<td>{{ person.id }}</td>
@@ -67,7 +67,7 @@
 						</div>
 						<td><a class="btn btn-default" href="edit/{{person.id}}"><span class="glyphicon glyphicon-pencil"></span></a> | <a href="delete/{{person.id}}"><span class="glyphicon glyphicon-trash"></span></a></td>
 					</tr>
-			{#	{% endif %} #}
+				{% endif %}
 			{% endfor %}
 		</table>
 </body>

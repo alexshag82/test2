@@ -1,6 +1,7 @@
 from django.db import models
  
 class Person(models.Model):
+    i_ru = models.CharField(max_length=20)
     ipadr = models.CharField(max_length=20)
     val_tip = models.CharField(max_length=20)
     va2_desc = models.CharField(max_length=20)
@@ -14,3 +15,8 @@ class Person(models.Model):
     va10_imssignal = models.CharField(max_length=20)
     val1_imsmedia = models.CharField(max_length=20)
     val2_nomers = models.CharField(max_length=20)
+ 
+class Rues(models.Model):
+    name = models.CharField(max_length=20)
+
+

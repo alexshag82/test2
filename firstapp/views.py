@@ -1,33 +1,33 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.http import HttpResponseNotFound
+from .models import Rues
 from .models import Person
+
  
 # получение данных из бд
 def index(request):
-    people = Person.objects.all()
-    return render(request, "index.html", {"people": people})
- 
-# сохранение данных в бд
-def create(request):
-    if request.method == "POST":
-        person = Person()
-        person.ipadr = request.POST.get("ipadr")
-        person.val_tip = request.POST.get("val_tip")
-        person.va2_desc = request.POST.get("va2_desc")
-        person.va3_prim = request.POST.get("va3_prim")
-        person.va4_vlan_byfly = request.POST.get("va4_vlan_byfly")
-        person.va5_pool_iptv = request.POST.get("va5_pool_iptv")
-        person.va6_pool_tr069 = request.POST.get("va6_pool_tr069")
-        person.va7_ims_relay = request.POST.get("va7_ims_relay")
-        person.va8_hwf = request.POST.get("va8_hwf")
-        person.va9_ohr = request.POST.get("va9_ohr")
-        person.va10_imssignal = request.POST.get("va10_imssignal")
-        person.val1_imsmedia = request.POST.get("val1_imsmedia")
-        person.val2_nomers = request.POST.get("val2_nomers")
-        person.save()
-    return HttpResponseRedirect("/")
- 
+    # q = Entry.objects.filter(headline__startswith="What")
+    # q = q.filter(pub_date__lte=datetime.now())
+    # q = q.exclude(body_text__icontains="food")
+    name_rues = Rues.objects.all()
+    ipadress = Person.objects.all()
+    # ipadress = Person.objects.filter(ipadr="192.168.201.30")
+    # ipadress = Person.objects.filter(ipadr__startswith="192.168.201.")
+    # ipadress_202 = Person.objects.filter(ipadr__startswith="192.168.202.")
+    return render(request, "index.html", {"name_rues": name_rues, "ipadress": ipadress})
+
+def list(request, id):
+    # q = Entry.objects.filter(headline__startswith="What")
+    # q = q.filter(pub_date__lte=datetime.now())
+    # q = q.exclude(body_text__icontains="food")
+    name_rues = Rues.objects.all()
+    ipadress = Person.objects.all()
+    # ipadress = Person.objects.filter(ipadr="192.168.201.30")
+    # ipadress = Person.objects.filter(ipadr__startswith="192.168.201.")
+    # ipadress_202 = Person.objects.filter(ipadr__startswith="192.168.202.")
+    return render(request, "list.html", {"name_rues": name_rues, "ipadress": ipadress, "id": id})
+
 # изменение данных в бд
 def edit(request, id):
     try:

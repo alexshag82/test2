@@ -1,6 +1,7 @@
 from django import forms
  
 class UserForm(forms.Form):
+    i_ru = forms.CharField(min_length=2, max_length=20)
     ipadr = forms.CharField(min_length=2, max_length=20)
     val_tip = forms.CharField(min_length=2, max_length=20)
     va2_desc = forms.CharField(min_length=2, max_length=20)
