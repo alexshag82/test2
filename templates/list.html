@@ -1,25 +1,93 @@
 {% load staticfiles %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>ip-local_DSLAM</title>
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 	<link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+	<title>ip-local_DSLAM</title>
 </head>
 <body>
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
+<!-- <nav class="navbar navbar-dark bg-primary"> -->
+<nav class="navbar navbar-dark bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">Support access (УПД группа обслуживания оборудования)</a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="../../">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Ip-local DSLAM <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../../gm_ipadr">Гомельские IP-адресса</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="gm_ipadr">IMS Static</a>
+      </li>
+
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="\admin">Вход</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!-- <br> -->
+
+
+<div class="alert alert-secondary" role="alert">
+	<!-- {% for rues in name_rues %} -->
+		<!-- <td><a class="btn btn-default" href="listq/{{name.id}}">{{ rues.name}}</a> </td> -->
+		<!-- <td><a class="btn btn-info" href="../{{rues.id}}">{{ rues.name}}</a></td> -->
+	<!-- {% endfor %} -->
+	<!-- <br> -->
+	<!-- {% for rues in name_rues %} -->
+		<!-- <td><a class="btn btn-light" href="../{{rues.id}}">{{ rues.name}}</a></td> -->
+	<!-- {% endfor %} -->
+	<!-- <br> -->
+	<!-- {% for rues in name_rues %} -->
+		<!-- <td><a class="btn btn-outline-dark" href="../{{rues.id}}">{{ rues.name}}</a></td> -->
+	<!-- {% endfor %} -->
+	<!-- <br> -->
+	<!-- <br> -->
+	{% for rues in name_rues %}
+		<td><a class="btn btn-outline-dark btn-sm" href="../{{rues.id}}">{{ rues.name}}</a></td>
+	{% endfor %}
+
+</div>
 		<!-- <h1>Узлы:</h1> -->
 		<!-- <table> -->
 			<!-- <thead> -->
 				<!-- <tr> -->
-				<div class="table_dark">
-					{% for rues in name_rues %}
-						<!-- <td><a class="btn btn-default" href="listq/{{name.id}}">{{ rues.name}}</a> </td> -->
-						<td><a class="btn btn-default" href="..\{{rues.id}}">{{ rues.name}}</span></a></td>
-					{% endfor %}
-				</div>
+				<!-- <div class="table_dark"> -->
+					<!-- {% for rues in name_rues %} -->
+						<!-- <td><a class="btn btn-default" href="../{{rues.id}}">{{ rues.name}}</span></a></td> -->
+					<!-- {% endfor %} -->
+				<!-- </div> -->
 				<!-- </tr> -->
 			<!-- </thead> -->
 		<!-- </table> -->
@@ -27,48 +95,94 @@
 		<table>
 			<thead>
 			<div class="table_blur">
-				<th>Id</th>
-				<th>i_ru</th>
-				<th>ip-адресс</th>
-				<th>Тип hard</th>
-				<th>desc</th>
+				<!-- <th>id</th> -->
+				<!-- <th>i_ru</th> -->
+				<th>ip</th>
+				<th>tip</th>
+				<th>descript</th>
 				<th>prim</th>
 				<th>vlan_byfly</th>
 				<th>pool_iptv</th>
 				<th>pool_tr069</th>
 				<th>ims_relay</th>
-				<th>hwf</th>
-				<th>ohr</th>
-				<th>imssignal</th>
+				<th>hw_access</th>
+				<th>ohr_dhcp</th>
+				<th>imssignaling</th>
 				<th>imsmedia</th>
-				<th>nomers</th>
+				<th>numbers</th>
 				<th></th></thead>
 			</div>
-			'{{id}}'<br>
+			<!-- '{{id}}' -->
 			{% for person in ipadress %}
-				{% if person.i_ru == id|urlencode %}
+				{% if person.i_ru == id and id != 34 %}
 					<tr>
-						<div class="post">
-							<td>{{ person.id }}</td>
-							<td>{{ person.i_ru}}</td>
-							<td>{{ person.ipadr}}</td>
-							<td>{{ person.val_tip}}</td>
-							<td>{{ person.va2_desc}}</td>
-							<td>{{ person.va3_prim}}</td>
-							<td>{{ person.va4_vlan_byfly}}</td>
-							<td>{{ person.va5_pool_iptv}}</td>
-							<td>{{ person.va6_pool_tr069}}</td>
-							<td>{{ person.va7_ims_relay}}</td>
-							<td>{{ person.va8_hwf}}</td>
-							<td>{{ person.va9_ohr }}</td>
-							<td>{{ person.va10_imssignal }}</td>
-							<td>{{ person.val1_imsmedia }}</td>
-							<td>{{ person.val2_nomers }}</td>
+						<div class="table table-striped">
+							<!-- <td>{{ person.id }}</td> -->
+							<!-- <td>{{ person.i_ru}}</td> -->
+							<td>{{ person.ip}}</td>
+							<td>{{ person.tip}}</td>
+							<td>{{ person.descript}}</td>
+							<td>{{ person.prim}}</td>
+							<td>{{ person.vlan_byfly}}</td>
+							<td>{{ person.pool_iptv}}</td>
+							<td>{{ person.pool_tr069}}</td>
+							<td>{{ person.ims_relay}}</td>
+							<td>{{ person.hw_access}}</td>
+							<td>{{ person.ohr_dhcp }}</td>
+							<td>{{ person.imssignaling }}</td>
+							<td>{{ person.imsmedia }}</td>
+							<td>{{ person.numbers }}</td>
 						</div>
-						<td><a class="btn btn-default" href="edit/{{person.id}}"><span class="glyphicon glyphicon-pencil"></span></a> | <a href="delete/{{person.id}}"><span class="glyphicon glyphicon-trash"></span></a></td>
+						<!-- <td><a class="btn btn-default" href="../../edit/{{person.id}}"><span class="glyphicon glyphicon-pencil"></span></a></td> -->
+						<!-- <td><a class="btn btn-default" href="../../edit/{{person.id}}"><img src="{% static "png/edit4.png" %}" alt="My image" style="width:15px;height:15px;"/></a></td> -->
+						<!-- <td><a class="btn btn-default" href="../../edit/{{person.id}}"><img src="{% static "png/edit14.png" %}" alt="My image" style="width:15px;height:15px;"/></a></td> -->
+						<!-- <td><a class="btn btn-default" href="../../edit/{{person.id}}"><img src="{% static "png/edit9.png" %}" alt="My image" style="width:15px;height:15px;"/></a></td> -->
+						<!-- <td><a class="btn btn-default" href="../../edit/{{person.id}}"><img src="{% static "png/edit6.png" %}" alt="My image" style="width:15px;height:15px;"/></a></td> -->
+						<!-- <td><a class="btn btn-default" href="../../edit/{{person.id}}"><img src="{% static "png/edit11.png" %}" alt="My image" style="width:15px;height:15px;"/></a></td> -->
+						<!-- <td><a class="btn btn-default" href="../../edit/{{person.id}}"><img src="{% static "png/edit8.png" %}" alt="My image" style="width:15px;height:15px;"/></a></td> -->
+						<!-- <td><a class="btn btn-default" href="../../edit/{{person.id}}"><img src="{% static "png/edit10.png" %}" alt="My image" style="width:15px;height:15px;"/></a></td> -->
+						<!-- <td><a class="btn btn-default" href="../../edit/{{person.id}}"><img src="{% static "png/edit12.png" %}" alt="My image" style="width:15px;height:15px;"/></a></td> -->
+						<!-- <td><a class="btn btn-default" href="../../edit/{{person.id}}"><img src="{% static "png/edit13.png" %}" alt="My image" style="width:15px;height:15px;"/></a></td> -->
+						<!-- <td><a class="btn btn-default" href="../../edit/{{person.id}}"><img src="{% static "png/edit15.png" %}" alt="My image" style="width:15px;height:15px;"/></a></td> -->
+						<!-- <td><a class="btn btn-default" href="../../edit/{{person.id}}"><img src="{% static "png/edit17.png" %}" alt="My image" style="width:15px;height:15px;"/></a></td> -->
+						<!-- <td><a class="btn btn-default" href="../../edit/{{person.id}}"><img src="{% static "png/edit18.png" %}" alt="My image" style="width:15px;height:15px;"/></a></td> -->
+						<td><a class="btn btn-default" href="../../edit/{{person.id}}"><img src="{% static "png/edit5.png" %}" alt="My image" style="width:15px;height:15px;"/></a></td>
 					</tr>
 				{% endif %}
 			{% endfor %}
+			
+			{% if id == 34 %}
+				{% for person in ipadress %}
+					<tr>
+						<div class="post">
+							<!-- <td>{{ person.id }}</td> -->
+							<!-- <td>{{ person.i_ru}}</td> -->
+							<td>{{ person.ip}}</td>
+							<td>{{ person.tip}}</td>
+							<td>{{ person.descript}}</td>
+							<td>{{ person.prim}}</td>
+							<td>{{ person.vlan_byfly}}</td>
+							<td>{{ person.pool_iptv}}</td>
+							<td>{{ person.pool_tr069}}</td>
+							<td>{{ person.ims_relay}}</td>
+							<td>{{ person.hw_access}}</td>
+							<td>{{ person.ohr_dhcp }}</td>
+							<td>{{ person.imssignaling }}</td>
+							<td>{{ person.imsmedia }}</td>
+							<td>{{ person.numbers }}</td>
+						</div>
+						<td><a class="btn btn-default" href="../../edit/{{person.id}}"><img src="{% static "png/edit9.png" %}" alt="My image" style="width:15px;height:15px;"/></a></td>
+						<td><a class="btn btn-default" href="../../edit/{{person.id}}"><img src="{% static "png/edit5.png" %}" alt="My image" style="width:15px;height:15px;"/></a></td>
+					</tr>
+				{% endfor %}
+			{% endif %}
+
+
 		</table>
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 </body>
 </html>
