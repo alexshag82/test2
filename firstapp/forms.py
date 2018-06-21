@@ -15,3 +15,18 @@ class UserForm(forms.Form):
     imssignaling = forms.CharField(min_length=2, max_length=20)
     imsmedia = forms.CharField(min_length=2, max_length=20)
     numbers = forms.CharField(min_length=2, max_length=20)
+
+class GmipimsstaticForm(forms.Form):
+    i_ru = forms.CharField(min_length=2, max_length=20)
+    rues = forms.CharField(min_length=2, max_length=20)
+    ne = forms.CharField(min_length=2, max_length=20)
+    descript = forms.CharField(min_length=2, max_length=20)
+    ip = forms.CharField(min_length=2, max_length=20)
+    mask = forms.CharField(min_length=2, max_length=20)
+    gw = forms.CharField(min_length=2, max_length=20)
+    ip_in = forms.CharField(min_length=2, max_length=20)
+    port_in = forms.CharField(min_length=2, max_length=20)
+    hard = forms.CharField(min_length=2, max_length=20)
+    sn = forms.CharField(min_length=2, max_length=20)
+    prim1 = forms.CharField(min_length=2, max_length=20)
+    prim2 = forms.CharField(min_length=2, max_length=20)

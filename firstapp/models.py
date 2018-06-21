@@ -18,8 +18,20 @@ class Person(models.Model):
  
 class Rues(models.Model):
     name = models.CharField(max_length=20)
+    ip_ne = models.CharField(max_length=20)
 
-class Gmipadress(models.Model):
-    name = models.CharField(max_length=20)
+class Gmipimsstatic(models.Model):
+    i_ru = models.CharField(max_length=20)
+    rues = models.CharField(max_length=20)
+    ne = models.CharField(max_length=20)
+    descript = models.CharField(max_length=20)
+    ip = models.CharField(max_length=20)
+    mask = models.CharField(max_length=20)
+    gw = models.CharField(max_length=20)
+    ip_in = models.CharField(max_length=20)
+    port_in = models.CharField(max_length=20)
+    hard = models.CharField(max_length=20)
+    sn = models.CharField(max_length=20)
+    prim1 = models.CharField(max_length=20)
 
 

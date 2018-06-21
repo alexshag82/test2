@@ -1,0 +1,142 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+	<title>ip-local_DSLAM</title>
+</head>
+<body>
+
+<form method="POST" class="form-horizontal" role="form">
+{% csrf_token %}
+
+<div class="form-group">
+	<div class="row">
+		<label for="inputtext" class="col-sm-2 control-label">Введите i_ru  </label>
+		<div class="col-xs-3">
+			<input class="form-control input-sm" type="text" placeholder<input type="text" name="i_ru" value="{{gmipimsstatic.i_ru}}" />
+		</div>
+	</div>
+</div>
+
+<div class="form-group">
+	<div class="row">
+		<label for="inputEmail3" class="col-sm-2 control-label">Введите rues</label>
+		<div class="col-xs-3">
+			<input class="form-control input-sm" type="text" placeholder<input type="text" name="rues" value="{{gmipimsstatic.rues}}" />
+		</div>
+	</div>
+</div>
+
+<div class="form-group">
+	<div class="row">
+		<label for="inputEmail3" class="col-sm-2 control-label">Введите ne</label>
+		<div class="col-xs-3">
+			<input class="form-control input-sm" type="text" placeholder<input type="text" name="ne" value="{{gmipimsstatic.ne}}" />
+		</div>
+	</div>
+</div>
+
+<div class="form-group">
+	<div class="row">
+		<label for="inputEmail3" class="col-sm-2 control-label">Введите descript</label>
+		<div class="col-xs-3">
+			<input class="form-control input-sm" type="text" placeholder<input type="text" name="descript" value="{{gmipimsstatic.descript}}" />
+		</div>
+	</div>
+</div>
+
+<div class="form-group">
+	<div class="row">
+		<label for="inputEmail3" class="col-sm-2 control-label">Введите ip</label>
+		<div class="col-xs-3">
+			<input class="form-control input-sm" type="text" placeholder<input type="text" name="ip" value="{{gmipimsstatic.ip}}" />
+		</div>
+	</div>
+</div>
+
+<div class="form-group">
+	<div class="row">
+		<label for="inputEmail3" class="col-sm-2 control-label">Введите mask</label>
+		<div class="col-xs-3">
+			<input class="form-control input-sm" type="text" placeholder<input type="text" name="mask" value="{{gmipimsstatic.mask}}" />
+		</div>
+	</div>
+</div>
+
+<div class="form-group">
+	<div class="row">
+		<label for="inputEmail3" class="col-sm-2 control-label">Введите gw</label>
+		<div class="col-xs-3">
+			<input class="form-control input-sm" type="text" placeholder<input type="text" name="gw" value="{{gmipimsstatic.gw}}" />
+		</div>
+	</div>
+</div>
+
+<div class="form-group">
+	<div class="row">
+		<label for="inputEmail3" class="col-sm-2 control-label">Введите ip_in</label>
+		<div class="col-xs-3">
+			<input class="form-control input-sm" type="text" placeholder<input type="text" name="ip_in" value="{{gmipimsstatic.ip_in}}" />
+		</div>
+	</div>
+</div>
+
+<div class="form-group">
+	<div class="row">
+		<label for="inputEmail3" class="col-sm-2 control-label">Введите port_in</label>
+		<div class="col-xs-3">
+			<input class="form-control input-sm" type="text" placeholder<input type="text" name="port_in" value="{{gmipimsstatic.port_in}}" />
+		</div>
+	</div>
+</div>
+
+<div class="form-group">
+	<div class="row">
+		<label for="inputEmail3" class="col-sm-2 control-label">Введите hard</label>
+		<div class="col-xs-3">
+			<input class="form-control input-sm" type="text" placeholder<input type="text" name="hard" value="{{gmipimsstatic.hard}}" />
+		</div>
+	</div>
+</div>
+
+<div class="form-group">
+	<div class="row">
+		<label for="inputEmail3" class="col-sm-2 control-label">Введите sn</label>
+		<div class="col-xs-3">
+			<input class="form-control input-sm" type="text" placeholder<input type="text" name="sn" value="{{gmipimsstatic.sn}}" />
+		</div>
+	</div>
+</div>
+
+<div class="form-group">
+	<div class="row">
+		<label for="inputEmail3" class="col-sm-2 control-label">Введите prim1</label>
+		<div class="col-xs-3">
+			<input class="form-control input-sm" type="text" placeholder<input type="text" name="prim1" value="{{gmipimsstatic.prim1}}" />
+		</div>
+	</div>
+</div>
+
+
+
+
+<div class="form-group">
+	<div class="col-sm-offset-2 col-xs-3">
+		<input type="submit" value="Сохранить" >
+	</div>
+</div>
+</form>
+
+	
+</body>
+</html>

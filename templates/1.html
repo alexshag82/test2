@@ -1,0 +1,24 @@
+{% extends '1.html' %}
+
+{% block content %}
+<div class="alert alert-secondary" role="alert">
+	<!-- {% for rues in name_rues %} -->
+		<!-- <td><a class="btn btn-default" href="listq/{{name.id}}">{{ rues.name}}</a> </td> -->
+		<!-- <td><a class="btn btn-info" href="../{{rues.id}}">{{ rues.name}}</a></td> -->
+	<!-- {% endfor %} -->
+	<!-- <br> -->
+	<!-- {% for rues in name_rues %} -->
+		<!-- <td><a class="btn btn-light" href="../{{rues.id}}">{{ rues.name}}</a></td> -->
+	<!-- {% endfor %} -->
+	<!-- <br> -->
+	<!-- {% for rues in name_rues %} -->
+		<!-- <td><a class="btn btn-outline-dark" href="../{{rues.id}}">{{ rues.name}}</a></td> -->
+	<!-- {% endfor %} -->
+	<!-- <br> -->
+	<!-- <br> -->
+	{% for rues in name_rues %}
+		<td><a class="btn btn-outline-dark btn-sm" href="../{{rues.id}}">{{ rues.name}}</a></td>
+	{% endfor %}
+
+</div>
+{% endblock %}

@@ -24,21 +24,21 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="#">Support access (УПД группа обслуживания оборудования)</a>
+  <a class="navbar-brand" href="#">IMS Static | Support access (УПД группа обслуживания оборудования)|</a>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="../">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="../../">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="../">ip-local DSLAM</a>
+        <a class="nav-link" href="../../">ip-local DSLAM</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="../gm_ipadr">Гомельские IP-адресса</a>
+        <a class="nav-link" href="../../gm_ipadr/34">Гомельские IP-адресса</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="../gm_ipadr">IMS Static</a>
+        <a class="nav-link" href="../../gm_ipadr/34">IMS Static</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -59,71 +59,79 @@
 </nav>
 
 
-		<!-- <h1>Узлы:</h1> -->
-		<!-- <table> -->
-			<!-- <thead> -->
-				<!-- <tr> -->
-				<div class="table_dark">
-				{% for rues in name_rues %}
-					<td><a class="btn btn-outline-dark" href="/list/{{rues.id}}">{{ rues.name}}</a></td>
-				{% endfor %}
-				<br>
-				<br>
-				{% for rues in name_rues %}
-					<td><a class="btn btn-outline-dark btn-sm" href="/list/{{rues.id}}">{{ rues.name}}</a></td>
-				{% endfor %}
-				</div>
-				<!-- </tr> -->
-			<!-- </thead> -->
-		<!-- </table> -->
-		<h2>Выбирите узел</h2>
+<div class="alert alert-secondary" role="alert">
+	{% for rues in name_rues %}
+		<td><a class="btn btn-outline-dark btn-sm" href="../../gm_ipadr/{{rues.id}}">{{ rues.name}}</a></td>
+	{% endfor %}
+</div>
+
+		<!-- <h2>Все узлы (выбирите узел)</h2> -->
 		<table>
 			<thead>
-			<!-- <div class="table_blur"> -->
-				<!-- <th>Id</th> -->
-				<!-- <th>i_ru</th> -->
-				<!-- <th>ip-адресс</th> -->
-				<!-- <th>Тип hard</th> -->
-				<!-- <th>desc</th> -->
-				<!-- <th>prim</th> -->
-				<!-- <th>vlan_byfly</th> -->
-				<!-- <th>pool_iptv</th> -->
-				<!-- <th>pool_tr069</th> -->
-				<!-- <th>ims_relay</th> -->
-				<!-- <th>hwf</th> -->
-				<!-- <th>ohr</th> -->
-				<!-- <th>imssignal</th> -->
-				<!-- <th>imsmedia</th> -->
-				<!-- <th>nomers</th> -->
-				<!-- <th></th></thead> -->
-			<!-- </div> -->
+			<div class="table_blur">
+				<th>id</th>
+				<th>i_ru</th>
+				<th>rues</th>
+				<th>ne</th>
+				<th>descript</th>
+				<th>ip</th>
+				<th>mask</th>
+				<th>gw</th>
+				<th>ip_in</th>
+				<th>port_in</th>
+				<th>hard</th>
+				<th>sn</th>
+				<th>prim1</th>
+				<th></th></thead>
+			</div>
 			<!-- '{{id}}' -->
-			<!-- {% for person in ipadress %} -->
-			<!-- {#	{% if person.i_ru != id %} #} -->
-				<!-- {% if person.i_ru == id %} -->
-					<!-- <tr> -->
-						<!-- <div class="post"> -->
-							<!-- <td>{{ person.id }}</td> -->
-							<!-- <td>{{ person.i_ru}}</td> -->
-							<!-- <td>{{ person.ip}}</td> -->
-							<!-- <td>{{ person.tip}}</td> -->
-							<!-- <td>{{ person.descript}}</td> -->
-							<!-- <td>{{ person.prim}}</td> -->
-							<!-- <td>{{ person.vlan_byfly}}</td> -->
-							<!-- <td>{{ person.pool_iptv}}</td> -->
-							<!-- <td>{{ person.pool_tr069}}</td> -->
-							<!-- <td>{{ person.ims_relay}}</td> -->
-							<!-- <td>{{ person.hw_access}}</td> -->
-							<!-- <td>{{ person.ohr_dhcp }}</td> -->
-							<!-- <td>{{ person.imssignaling }}</td> -->
-							<!-- <td>{{ person.imsmedia }}</td> -->
-							<!-- <td>{{ person.numbers }}</td> -->
-						<!-- </div> -->
-						<!-- <td><a class="btn btn-default" href="edit/{{person.id}}"><span class="glyphicon glyphicon-pencil"></span></a> | <a href="delete/{{person.id}}"><span class="glyphicon glyphicon-trash"></span></a></td> -->
-					<!-- </tr> -->
-			<!-- {#	{% endif %} #} -->
-			<!-- {% endif %} -->
-			<!-- {% endfor %} -->
+			{% for gmipimsstatic in imsstat %}
+				{% if gmipimsstatic.i_ru == id and id != 34 %}
+					<tr>
+						<div class="table table-striped">
+							<td>{{ gmipimsstatic.id }}</td>
+							<td>{{ gmipimsstatic.i_ru}}</td>
+							<td>{{ gmipimsstatic.rues}}</td>
+							<td>{{ gmipimsstatic.ne}}</td>
+							<td>{{ gmipimsstatic.descript}}</td>
+							<td>{{ gmipimsstatic.ip}}</td>
+							<td>{{ gmipimsstatic.mask}}</td>
+							<td>{{ gmipimsstatic.gw}}</td>
+							<td>{{ gmipimsstatic.ip_in}}</td>
+							<td>{{ gmipimsstatic.port_in}}</td>
+							<td>{{ gmipimsstatic.hard }}</td>
+							<td>{{ gmipimsstatic.sn }}</td>
+							<td>{{ gmipimsstatic.prim1 }}</td>
+						</div>
+						<td><a class="btn btn-default" href="../../edit_gm_ipadr/{{gmipimsstatic.id}}"><img src="{% static "png/edit5.png" %}" alt="My image" style="width:15px;height:15px;"/></a></td>
+					</tr>
+				{% endif %}
+			{% endfor %}
+			
+			{% if id == 34 %}
+				{% for gmipimsstatic in imsstat %}
+					<tr>
+						<div class="post">
+							<td>{{ gmipimsstatic.id }}</td>
+							<td>{{ gmipimsstatic.i_ru}}</td>
+							<td>{{ gmipimsstatic.rues}}</td>
+							<td>{{ gmipimsstatic.ne}}</td>
+							<td>{{ gmipimsstatic.descript}}</td>
+							<td>{{ gmipimsstatic.ip}}</td>
+							<td>{{ gmipimsstatic.mask}}</td>
+							<td>{{ gmipimsstatic.gw}}</td>
+							<td>{{ gmipimsstatic.ip_in}}</td>
+							<td>{{ gmipimsstatic.port_in}}</td>
+							<td>{{ gmipimsstatic.hard }}</td>
+							<td>{{ gmipimsstatic.sn }}</td>
+							<td>{{ gmipimsstatic.prim1 }}</td>
+						</div>
+						<td><a class="btn btn-default" href="../../edit_gm_ipadr/{{gmipimsstatic.id}}"><img src="{% static "png/edit5.png" %}" alt="My image" style="width:15px;height:15px;"/></a></td>
+					</tr>
+				{% endfor %}
+			{% endif %}
+
+
 		</table>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
